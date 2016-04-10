@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Feeds-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="FlingTestApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -34,7 +34,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMn-90-Cru">
                                                     <rect key="frame" x="16" y="0.0" width="568" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="uPF-ch-gwn">
@@ -74,7 +74,7 @@
                             <constraint firstAttribute="trailing" secondItem="DFd-yW-p4O" secondAttribute="trailing" id="c1f-m3-G3Z"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="s6y-9R-env"/>
+                    <navigationItem key="navigationItem" title="Feeds" id="s6y-9R-env"/>
                     <connections>
                         <outlet property="tableView" destination="DFd-yW-p4O" id="aU6-57-jGv"/>
                     </connections>

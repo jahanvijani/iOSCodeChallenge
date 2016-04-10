@@ -14,7 +14,6 @@
 		EDAEF6F21CB9C9AE00D9EC61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDAEF6F01CB9C9AE00D9EC61 /* LaunchScreen.storyboard */; };
 		EDAEF6FD1CB9C9AE00D9EC61 /* FlingTestAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAEF6FC1CB9C9AE00D9EC61 /* FlingTestAppTests.swift */; };
 		EDAEF7081CB9C9AE00D9EC61 /* FlingTestAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAEF7071CB9C9AE00D9EC61 /* FlingTestAppUITests.swift */; };
-		EDAEF71D1CB9CBC700D9EC61 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAEF7191CB9CBC700D9EC61 /* Photo.swift */; };
 		EDAEF71F1CB9CBC700D9EC61 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAEF71B1CB9CBC700D9EC61 /* Feed.swift */; };
 		EDAEF7231CB9CC6800D9EC61 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAEF7221CB9CC6800D9EC61 /* FeedTableViewCell.swift */; };
 		EDAEF7251CB9CEC400D9EC61 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAEF7241CB9CEC400D9EC61 /* ViewController.swift */; };
@@ -56,7 +55,6 @@
 		EDAEF7031CB9C9AE00D9EC61 /* FlingTestAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlingTestAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDAEF7071CB9C9AE00D9EC61 /* FlingTestAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlingTestAppUITests.swift; sourceTree = "<group>"; };
 		EDAEF7091CB9C9AE00D9EC61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EDAEF7191CB9CBC700D9EC61 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Photo.swift; path = Model/Photo.swift; sourceTree = "<group>"; };
 		EDAEF71B1CB9CBC700D9EC61 /* Feed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Feed.swift; path = Model/Feed.swift; sourceTree = "<group>"; };
 		EDAEF7221CB9CC6800D9EC61 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedTableViewCell.swift; path = CustomTableViewCells/FeedTableViewCell.swift; sourceTree = "<group>"; };
 		EDAEF7241CB9CEC400D9EC61 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ViewControllers/ViewController.swift; sourceTree = "<group>"; };
@@ -153,7 +151,6 @@
 		EDAEF7151CB9CA9E00D9EC61 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				EDAEF7191CB9CBC700D9EC61 /* Photo.swift */,
 				EDAEF71B1CB9CBC700D9EC61 /* Feed.swift */,
 			);
 			name = Model;
@@ -329,7 +326,6 @@
 				EDAEF71F1CB9CBC700D9EC61 /* Feed.swift in Sources */,
 				EDAEF72C1CB9D58D00D9EC61 /* FeedDataManager.swift in Sources */,
 				EDAEF6E51CB9C9AE00D9EC61 /* AppDelegate.swift in Sources */,
-				EDAEF71D1CB9CBC700D9EC61 /* Photo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -561,6 +557,7 @@
 				EDAEF70E1CB9C9AE00D9EC61 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EDAEF70F1CB9C9AE00D9EC61 /* Build configuration list for PBXNativeTarget "FlingTestAppTests" */ = {
 			isa = XCConfigurationList;
@@ -569,6 +566,7 @@
 				EDAEF7111CB9C9AE00D9EC61 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EDAEF7121CB9C9AE00D9EC61 /* Build configuration list for PBXNativeTarget "FlingTestAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -577,6 +575,7 @@
 				EDAEF7141CB9C9AE00D9EC61 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

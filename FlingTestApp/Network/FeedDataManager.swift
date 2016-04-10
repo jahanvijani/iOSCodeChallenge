@@ -80,11 +80,6 @@ class FeedDataManager: NSObject {
         } catch {
             print(error)
         }
-        
-        /*let gameResponse = GameResponse()
-        gameResponse.initWithProperties(json)
-        self.currency = gameResponse.currency
-        self.games = gameResponse.games*/
     }
 
 }

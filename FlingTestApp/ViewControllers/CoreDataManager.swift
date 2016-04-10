@@ -29,26 +29,20 @@ class CoreDataManager: NSObject {
         let entity =  NSEntityDescription.entityForName("Feed",
                                                         inManagedObjectContext:managedContext)
         
-        //let photoEntity =  NSEntityDescription.entityForName("Photo",
-                                                    //inManagedObjectContext:managedContext)
-        
-        
         let feed = Feed(entity: entity!,
                             insertIntoManagedObjectContext: managedContext)
-        
-        //let photo = Photo(entity: photoEntity!,
-        //                insertIntoManagedObjectContext: managedContext)
-        
         
         feed.feedID = feedData["ID"] as? NSNumber
         feed.userID = feedData["UserID"] as? NSNumber
         feed.photoTitle = feedData["Title"] as? String
         feed.userName = feedData["UserName"] as? String
         feed.photoID = feedData["ImageID"] as? NSNumber
-        //feed.photo = photo
+        
+        let bgManagedContext = NSManagedObjectContext(concurrencyType: .PrivateQueueConcurrencyType)
+        bgManagedContext.parentContext = managedContext
         
         do {
-            try managedContext.save()
+            try bgManagedContext.save()
         } catch let error as NSError  {
             print("Could not save \(error), \(error.userInfo)")
         }
@@ -73,8 +67,11 @@ class CoreDataManager: NSObject {
             // Do something in response to error condition
         }
         
+        let bgManagedContext = NSManagedObjectContext(concurrencyType: .PrivateQueueConcurrencyType)
+        bgManagedContext.parentContext = managedContext
+        
         do {
-            try managedContext.save()
+            try bgManagedContext.save()
         } catch {
             // Do something in response to error condition
         }
