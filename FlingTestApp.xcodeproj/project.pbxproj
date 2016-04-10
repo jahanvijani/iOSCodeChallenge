@@ -18,6 +18,11 @@
 		EDAEF71F1CB9CBC700D9EC61 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAEF71B1CB9CBC700D9EC61 /* Feed.swift */; };
 		EDAEF7231CB9CC6800D9EC61 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAEF7221CB9CC6800D9EC61 /* FeedTableViewCell.swift */; };
 		EDAEF7251CB9CEC400D9EC61 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAEF7241CB9CEC400D9EC61 /* ViewController.swift */; };
+		EDAEF7281CB9D52B00D9EC61 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAEF7271CB9D52B00D9EC61 /* Constant.swift */; };
+		EDAEF72A1CB9D57700D9EC61 /* RestAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAEF7291CB9D57700D9EC61 /* RestAPIManager.swift */; };
+		EDAEF72C1CB9D58D00D9EC61 /* FeedDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAEF72B1CB9D58D00D9EC61 /* FeedDataManager.swift */; };
+		EDAEF7301CBA7D1D00D9EC61 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = EDAEF72F1CBA7D1D00D9EC61 /* Reachability.m */; };
+		EDAEF7361CBA80E200D9EC61 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAEF7351CBA80E200D9EC61 /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +60,13 @@
 		EDAEF71B1CB9CBC700D9EC61 /* Feed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Feed.swift; path = Model/Feed.swift; sourceTree = "<group>"; };
 		EDAEF7221CB9CC6800D9EC61 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedTableViewCell.swift; path = CustomTableViewCells/FeedTableViewCell.swift; sourceTree = "<group>"; };
 		EDAEF7241CB9CEC400D9EC61 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ViewControllers/ViewController.swift; sourceTree = "<group>"; };
+		EDAEF7271CB9D52B00D9EC61 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		EDAEF7291CB9D57700D9EC61 /* RestAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RestAPIManager.swift; path = Network/RestAPIManager.swift; sourceTree = "<group>"; };
+		EDAEF72B1CB9D58D00D9EC61 /* FeedDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedDataManager.swift; path = Network/FeedDataManager.swift; sourceTree = "<group>"; };
+		EDAEF72D1CBA7D1D00D9EC61 /* FlingTestApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlingTestApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		EDAEF72E1CBA7D1D00D9EC61 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = Network/Reachability.h; sourceTree = "<group>"; };
+		EDAEF72F1CBA7D1D00D9EC61 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = Network/Reachability.m; sourceTree = "<group>"; };
+		EDAEF7351CBA80E200D9EC61 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataManager.swift; path = ViewControllers/CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +117,10 @@
 		EDAEF6E31CB9C9AE00D9EC61 /* FlingTestApp */ = {
 			isa = PBXGroup;
 			children = (
+				EDAEF7271CB9D52B00D9EC61 /* Constant.swift */,
 				EDAEF6EB1CB9C9AE00D9EC61 /* FlingTestApp.xcdatamodeld */,
 				EDAEF7151CB9CA9E00D9EC61 /* Model */,
+				EDAEF7261CB9D21D00D9EC61 /* Network */,
 				EDAEF7171CB9CAB100D9EC61 /* CustomTableViewCells */,
 				EDAEF7161CB9CAA700D9EC61 /* ViewControllers */,
 				EDAEF6E41CB9C9AE00D9EC61 /* AppDelegate.swift */,
@@ -159,6 +173,19 @@
 				EDAEF7221CB9CC6800D9EC61 /* FeedTableViewCell.swift */,
 			);
 			name = CustomTableViewCells;
+			sourceTree = "<group>";
+		};
+		EDAEF7261CB9D21D00D9EC61 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				EDAEF72E1CBA7D1D00D9EC61 /* Reachability.h */,
+				EDAEF72F1CBA7D1D00D9EC61 /* Reachability.m */,
+				EDAEF7291CB9D57700D9EC61 /* RestAPIManager.swift */,
+				EDAEF72B1CB9D58D00D9EC61 /* FeedDataManager.swift */,
+				EDAEF72D1CBA7D1D00D9EC61 /* FlingTestApp-Bridging-Header.h */,
+				EDAEF7351CBA80E200D9EC61 /* CoreDataManager.swift */,
+			);
+			name = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,10 +319,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDAEF7281CB9D52B00D9EC61 /* Constant.swift in Sources */,
 				EDAEF7251CB9CEC400D9EC61 /* ViewController.swift in Sources */,
+				EDAEF72A1CB9D57700D9EC61 /* RestAPIManager.swift in Sources */,
 				EDAEF7231CB9CC6800D9EC61 /* FeedTableViewCell.swift in Sources */,
+				EDAEF7301CBA7D1D00D9EC61 /* Reachability.m in Sources */,
+				EDAEF7361CBA80E200D9EC61 /* CoreDataManager.swift in Sources */,
 				EDAEF6ED1CB9C9AE00D9EC61 /* FlingTestApp.xcdatamodeld in Sources */,
 				EDAEF71F1CB9CBC700D9EC61 /* Feed.swift in Sources */,
+				EDAEF72C1CB9D58D00D9EC61 /* FeedDataManager.swift in Sources */,
 				EDAEF6E51CB9C9AE00D9EC61 /* AppDelegate.swift in Sources */,
 				EDAEF71D1CB9CBC700D9EC61 /* Photo.swift in Sources */,
 			);
@@ -441,10 +473,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = FlingTestApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = test.FlingTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FlingTestApp/FlingTestApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -452,10 +487,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = FlingTestApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = test.FlingTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FlingTestApp/FlingTestApp-Bridging-Header.h";
 			};
 			name = Release;
 		};

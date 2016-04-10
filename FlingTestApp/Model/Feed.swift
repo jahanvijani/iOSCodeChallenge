@@ -16,7 +16,9 @@ class Feed: NSManagedObject {
     @NSManaged var userID: NSNumber?
     @NSManaged var photoTitle: String?
     @NSManaged var userName: String?
-
+    @NSManaged var photoID: NSNumber?
+    @NSManaged var photoImage: NSData?
+    //@NSManaged var photo: NSManagedObject?
 // Insert code here to add functionality to your managed object subclass
 
 }
