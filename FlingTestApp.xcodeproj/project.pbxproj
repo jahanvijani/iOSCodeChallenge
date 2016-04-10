@@ -8,13 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		EDAEF6E51CB9C9AE00D9EC61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAEF6E41CB9C9AE00D9EC61 /* AppDelegate.swift */; };
-		EDAEF6E71CB9C9AE00D9EC61 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAEF6E61CB9C9AE00D9EC61 /* ViewController.swift */; };
 		EDAEF6EA1CB9C9AE00D9EC61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDAEF6E81CB9C9AE00D9EC61 /* Main.storyboard */; };
 		EDAEF6ED1CB9C9AE00D9EC61 /* FlingTestApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EDAEF6EB1CB9C9AE00D9EC61 /* FlingTestApp.xcdatamodeld */; };
 		EDAEF6EF1CB9C9AE00D9EC61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDAEF6EE1CB9C9AE00D9EC61 /* Assets.xcassets */; };
 		EDAEF6F21CB9C9AE00D9EC61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDAEF6F01CB9C9AE00D9EC61 /* LaunchScreen.storyboard */; };
 		EDAEF6FD1CB9C9AE00D9EC61 /* FlingTestAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAEF6FC1CB9C9AE00D9EC61 /* FlingTestAppTests.swift */; };
 		EDAEF7081CB9C9AE00D9EC61 /* FlingTestAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAEF7071CB9C9AE00D9EC61 /* FlingTestAppUITests.swift */; };
+		EDAEF71D1CB9CBC700D9EC61 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAEF7191CB9CBC700D9EC61 /* Photo.swift */; };
+		EDAEF71F1CB9CBC700D9EC61 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAEF71B1CB9CBC700D9EC61 /* Feed.swift */; };
+		EDAEF7231CB9CC6800D9EC61 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAEF7221CB9CC6800D9EC61 /* FeedTableViewCell.swift */; };
+		EDAEF7251CB9CEC400D9EC61 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAEF7241CB9CEC400D9EC61 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +40,6 @@
 /* Begin PBXFileReference section */
 		EDAEF6E11CB9C9AE00D9EC61 /* FlingTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlingTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDAEF6E41CB9C9AE00D9EC61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EDAEF6E61CB9C9AE00D9EC61 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EDAEF6E91CB9C9AE00D9EC61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EDAEF6EC1CB9C9AE00D9EC61 /* FlingTestApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FlingTestApp.xcdatamodel; sourceTree = "<group>"; };
 		EDAEF6EE1CB9C9AE00D9EC61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +51,10 @@
 		EDAEF7031CB9C9AE00D9EC61 /* FlingTestAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlingTestAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDAEF7071CB9C9AE00D9EC61 /* FlingTestAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlingTestAppUITests.swift; sourceTree = "<group>"; };
 		EDAEF7091CB9C9AE00D9EC61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDAEF7191CB9CBC700D9EC61 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Photo.swift; path = Model/Photo.swift; sourceTree = "<group>"; };
+		EDAEF71B1CB9CBC700D9EC61 /* Feed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Feed.swift; path = Model/Feed.swift; sourceTree = "<group>"; };
+		EDAEF7221CB9CC6800D9EC61 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedTableViewCell.swift; path = CustomTableViewCells/FeedTableViewCell.swift; sourceTree = "<group>"; };
+		EDAEF7241CB9CEC400D9EC61 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ViewControllers/ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +105,15 @@
 		EDAEF6E31CB9C9AE00D9EC61 /* FlingTestApp */ = {
 			isa = PBXGroup;
 			children = (
+				EDAEF6EB1CB9C9AE00D9EC61 /* FlingTestApp.xcdatamodeld */,
+				EDAEF7151CB9CA9E00D9EC61 /* Model */,
+				EDAEF7171CB9CAB100D9EC61 /* CustomTableViewCells */,
+				EDAEF7161CB9CAA700D9EC61 /* ViewControllers */,
 				EDAEF6E41CB9C9AE00D9EC61 /* AppDelegate.swift */,
-				EDAEF6E61CB9C9AE00D9EC61 /* ViewController.swift */,
 				EDAEF6E81CB9C9AE00D9EC61 /* Main.storyboard */,
 				EDAEF6EE1CB9C9AE00D9EC61 /* Assets.xcassets */,
 				EDAEF6F01CB9C9AE00D9EC61 /* LaunchScreen.storyboard */,
 				EDAEF6F31CB9C9AE00D9EC61 /* Info.plist */,
-				EDAEF6EB1CB9C9AE00D9EC61 /* FlingTestApp.xcdatamodeld */,
 			);
 			path = FlingTestApp;
 			sourceTree = "<group>";
@@ -126,6 +134,31 @@
 				EDAEF7091CB9C9AE00D9EC61 /* Info.plist */,
 			);
 			path = FlingTestAppUITests;
+			sourceTree = "<group>";
+		};
+		EDAEF7151CB9CA9E00D9EC61 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EDAEF7191CB9CBC700D9EC61 /* Photo.swift */,
+				EDAEF71B1CB9CBC700D9EC61 /* Feed.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		EDAEF7161CB9CAA700D9EC61 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				EDAEF7241CB9CEC400D9EC61 /* ViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		EDAEF7171CB9CAB100D9EC61 /* CustomTableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				EDAEF7221CB9CC6800D9EC61 /* FeedTableViewCell.swift */,
+			);
+			name = CustomTableViewCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,9 +292,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDAEF6E71CB9C9AE00D9EC61 /* ViewController.swift in Sources */,
+				EDAEF7251CB9CEC400D9EC61 /* ViewController.swift in Sources */,
+				EDAEF7231CB9CC6800D9EC61 /* FeedTableViewCell.swift in Sources */,
 				EDAEF6ED1CB9C9AE00D9EC61 /* FlingTestApp.xcdatamodeld in Sources */,
+				EDAEF71F1CB9CBC700D9EC61 /* Feed.swift in Sources */,
 				EDAEF6E51CB9C9AE00D9EC61 /* AppDelegate.swift in Sources */,
+				EDAEF71D1CB9CBC700D9EC61 /* Photo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
