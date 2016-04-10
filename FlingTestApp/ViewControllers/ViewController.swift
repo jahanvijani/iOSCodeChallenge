@@ -96,14 +96,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let feed = feeds[indexPath.row] as! Feed
         cell.photoLabel.text = feed.photoTitle
-        
+        cell.loadingIndicator.startAnimating()
         if(feed.photoImage == nil)
         {
             //Load image from image ID
+            FeedDataManager.sharedInstance.downloadImageWithCompletion(feed.photoID!,completionHandler: { ( sucess) -> Void in
+                if (sucess == true) {
+                    
+                    dispatch_async(dispatch_get_main_queue())
+                    {
+                        cell.photoImageView.image = UIImage(data: feed.photoImage!)
+                        cell.loadingIndicator.stopAnimating()
+                    }
+                }
+            })
         }
         else
         {
-            //cell.photoImageView.image = feed.photoImage
+            cell.photoImageView.image = UIImage(data: feed.photoImage!)
         }
         return cell
     }

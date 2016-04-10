@@ -9,6 +9,6 @@
 import Foundation
 
 let kBaseURL = "http://challenge.superfling.com"
-let kGetPhotosEndPoint = "/photos/id"
+let kGetPhotosEndPoint = "/photos/"
 
 let kNoInternetErrorCode = 123

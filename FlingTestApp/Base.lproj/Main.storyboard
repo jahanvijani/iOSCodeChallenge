@@ -28,27 +28,33 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="119.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xev-Id-lfi">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="119.5"/>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMn-90-Cru">
-                                                    <rect key="frame" x="16" y="10" width="568" height="21"/>
+                                                    <rect key="frame" x="16" y="0.0" width="568" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xev-Id-lfi">
-                                                    <rect key="frame" x="16" y="10" width="568" height="100"/>
-                                                </imageView>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="uPF-ch-gwn">
+                                                    <rect key="frame" x="290" y="50" width="20" height="20"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Xev-Id-lfi" firstAttribute="top" secondItem="0oh-Yc-l9G" secondAttribute="top" constant="10" id="AFY-Fn-NO1"/>
-                                                <constraint firstAttribute="bottom" secondItem="Xev-Id-lfi" secondAttribute="bottom" constant="10" id="Anc-gg-yA1"/>
-                                                <constraint firstAttribute="trailing" secondItem="Xev-Id-lfi" secondAttribute="trailing" constant="16" id="LVy-Ip-R4k"/>
-                                                <constraint firstItem="Xev-Id-lfi" firstAttribute="leading" secondItem="0oh-Yc-l9G" secondAttribute="leading" constant="16" id="bCh-Yh-O0a"/>
+                                                <constraint firstItem="uPF-ch-gwn" firstAttribute="centerY" secondItem="Xev-Id-lfi" secondAttribute="centerY" id="96Z-cb-z7o"/>
+                                                <constraint firstItem="Xev-Id-lfi" firstAttribute="top" secondItem="0oh-Yc-l9G" secondAttribute="top" id="AFY-Fn-NO1"/>
+                                                <constraint firstAttribute="bottom" secondItem="Xev-Id-lfi" secondAttribute="bottom" id="Anc-gg-yA1"/>
+                                                <constraint firstAttribute="trailing" secondItem="Xev-Id-lfi" secondAttribute="trailing" id="LVy-Ip-R4k"/>
+                                                <constraint firstItem="Xev-Id-lfi" firstAttribute="leading" secondItem="0oh-Yc-l9G" secondAttribute="leading" id="bCh-Yh-O0a"/>
                                                 <constraint firstItem="RMn-90-Cru" firstAttribute="leading" secondItem="0oh-Yc-l9G" secondAttribute="leading" constant="16" id="gxD-ix-3cf"/>
                                                 <constraint firstAttribute="trailing" secondItem="RMn-90-Cru" secondAttribute="trailing" constant="16" id="pA4-Nc-yb9"/>
+                                                <constraint firstItem="uPF-ch-gwn" firstAttribute="centerX" secondItem="Xev-Id-lfi" secondAttribute="centerX" id="wei-tJ-umm"/>
                                                 <constraint firstItem="RMn-90-Cru" firstAttribute="top" secondItem="Xev-Id-lfi" secondAttribute="top" id="xV1-5I-DxO"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="loadingIndicator" destination="uPF-ch-gwn" id="riC-zn-D1X"/>
                                             <outlet property="photoImageView" destination="Xev-Id-lfi" id="S57-Vl-QbS"/>
                                             <outlet property="photoLabel" destination="RMn-90-Cru" id="q6f-k2-sv9"/>
                                         </connections>

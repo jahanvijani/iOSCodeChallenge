@@ -37,7 +37,31 @@ class FeedDataManager: NSObject {
         
     }
     
-    
+    func downloadImageWithCompletion(imageID:NSNumber, completionHandler:((Bool)) -> Void)
+    {
+        if(RestAPIManager.isConnectedToNetwork())
+        {
+            //Generate URL to get photo
+            let url:NSURL = NSURL(string: kBaseURL+kGetPhotosEndPoint+String(imageID))!
+            
+            RestAPIManager.requestDataWithURL(url,completionHandler: { (data, error) -> Void in
+                if error == nil {
+                    
+                    let coreDataManager = CoreDataManager()
+                    coreDataManager.updateFeed(imageID,imageData: data!)
+                    completionHandler(true)
+                }
+                else
+                {
+                    completionHandler(false)
+                }
+            })
+        }
+        else
+        {
+            completionHandler(false)
+        }
+    }
     
     func parseJSONData(data:NSData)
     {

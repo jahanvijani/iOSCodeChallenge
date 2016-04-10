@@ -23,7 +23,7 @@ class RestAPIManager: NSObject {
         task.resume()
     }
     
-    class func downloadRequestWithURL(url: NSURL,paramString: String, completionHandler:((NSData?,NSError?)) -> Void)
+    class func downloadRequestWithURL(url: NSURL, completionHandler:((NSData?,NSError?)) -> Void)
     {
         //let url:NSURL = NSURL(string: kBaseURL)!
         let session = NSURLSession.sharedSession()
@@ -33,7 +33,7 @@ class RestAPIManager: NSObject {
         request.cachePolicy = NSURLRequestCachePolicy.ReloadIgnoringCacheData
         
         //let paramString = "data=Hello"
-        request.HTTPBody = paramString.dataUsingEncoding(NSUTF8StringEncoding)
+        //request.HTTPBody = paramString.dataUsingEncoding(NSUTF8StringEncoding)
         
         
         let task = session.downloadTaskWithRequest(request) {

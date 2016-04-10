@@ -20,11 +20,10 @@ struct feedDictionaryKeys {
 
 class CoreDataManager: NSObject {
     
-    let appDelegate =
-        UIApplication.sharedApplication().delegate as! AppDelegate
-    
-    
     func saveFeed(feedData:NSDictionary) -> Feed {
+        
+        let appDelegate =
+            UIApplication.sharedApplication().delegate as! AppDelegate
         
         let managedContext = appDelegate.managedObjectContext
         let entity =  NSEntityDescription.entityForName("Feed",
@@ -57,7 +56,34 @@ class CoreDataManager: NSObject {
         return feed
     }
     
+    func updateFeed(imageID:NSNumber,imageData:NSData) {
+        
+        let appDelegate =
+            UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        let fetchRequest = NSFetchRequest(entityName: "Feed")
+        fetchRequest.predicate = NSPredicate(format: "photoID = %@", imageID)
+        
+        do {
+            let fetchedEntities = try managedContext.executeFetchRequest(fetchRequest) as! [Feed]
+            fetchedEntities.first?.photoImage = imageData
+        } catch {
+            // Do something in response to error condition
+        }
+        
+        do {
+            try managedContext.save()
+        } catch {
+            // Do something in response to error condition
+        }
+    }
+    
     func clearFeedData() {
+        let appDelegate =
+            UIApplication.sharedApplication().delegate as! AppDelegate
+        
         let managedContext = appDelegate.managedObjectContext
         let persistentStoreCoordinator = appDelegate.persistentStoreCoordinator
         
