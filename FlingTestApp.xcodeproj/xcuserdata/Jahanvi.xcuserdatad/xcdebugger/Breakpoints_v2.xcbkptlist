@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FlingTestApp/Network/RestAPIManager.swift"
-            timestampString = "482002875.450749"
+            filePath = "FlingTestApp/ViewControllers/CoreDataManager.swift"
+            timestampString = "482027319.05034"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "downloadRequestWithURL(_:completionHandler:)"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "getFeed()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

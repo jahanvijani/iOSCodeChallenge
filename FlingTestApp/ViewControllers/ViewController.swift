@@ -20,7 +20,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Get feed data
+        //Get feed data from server
+        self.tableView.hidden = true
         self.showLoading()
         FeedDataManager.sharedInstance.getFeedDataWithCompletion {(error) -> Void in
             
@@ -28,20 +29,27 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             {
                 if((error) == nil)
                 {
+                    //Update UITableView with Feed Data
                     self.feeds = FeedDataManager.sharedInstance.feeds
                     self.tableView.reloadData()
                 }
                 else
                 {
+                    //No Internet connection
                     if(error?.code == kNoInternetErrorCode)
                     {
-                        self.showErrorMessage("No Internet Connection")
+                        self.showErrorMessage("No Internet Connection. Showing last updated data")
+                        
+                        //Update UITableView with Feed Data from core data
+                        self.feeds = FeedDataManager.sharedInstance.feeds
+                        self.tableView.reloadData()
                     }
-                    else
+                    else //Problem in load data from server
                     {
                         self.showErrorMessage("Problem in server to load data")
                     }
                 }
+                self.tableView.hidden = false
                 self.hideLoading()
             }
         }
@@ -52,12 +60,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // Dispose of any resources that can be recreated.
     }
     
+    //Show Error messages in AlertView
     func showErrorMessage(message:String) {
         let alertView = UIAlertController(title: "", message: message, preferredStyle: .Alert)
         alertView.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
         presentViewController(alertView, animated: true, completion: nil)
     }
     
+    
+    //Show loading indicator
     func showLoading() {
         
         if(loadingIndicator == nil)
@@ -70,6 +81,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         loadingIndicator.startAnimating()
     }
     
+    //Hide loading indicator
     func hideLoading() {
         
         loadingIndicator.stopAnimating()
@@ -94,9 +106,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let feed = feeds[indexPath.row] as! Feed
         cell.photoLabel.text = feed.photoTitle
-        cell.loadingIndicator.startAnimating()
+        cell.photoImageView.image = nil
+        cell.loadingIndicator.hidden = false
         if(feed.photoImage == nil)
         {
+            cell.loadingIndicator.startAnimating()
             //Load image from image ID
             FeedDataManager.sharedInstance.downloadImageWithCompletion(feed.photoID!,completionHandler: { ( sucess) -> Void in
                 if (sucess == true) {
@@ -105,12 +119,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     {
                         cell.photoImageView.image = UIImage(data: feed.photoImage!)
                         cell.loadingIndicator.stopAnimating()
+                        cell.loadingIndicator.hidden = true
                     }
                 }
             })
         }
         else
         {
+            cell.loadingIndicator.stopAnimating()
+            cell.loadingIndicator.hidden = true
             cell.photoImageView.image = UIImage(data: feed.photoImage!)
         }
         return cell

@@ -11,7 +11,6 @@ import UIKit
 class FeedTableViewCell: UITableViewCell {
     
     @IBOutlet weak var photoLabel: UILabel!
-    
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
 }

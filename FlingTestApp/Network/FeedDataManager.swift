@@ -18,6 +18,7 @@ class FeedDataManager: NSObject {
     {
             if(RestAPIManager.isConnectedToNetwork())
             {
+                //Call API for feed data
                 let url:NSURL = NSURL(string: kBaseURL)!
                 RestAPIManager.requestDataWithURL(url,completionHandler: { (data, error) -> Void in
                     if error == nil {
@@ -32,6 +33,10 @@ class FeedDataManager: NSObject {
             }
             else
             {
+                //Get data from Core Data in offline mode
+                let coreDataManager = CoreDataManager()
+                feeds = NSMutableArray(array: coreDataManager.getFeed()!)
+                
                 completionHandler(NSError(domain: "", code: kNoInternetErrorCode, userInfo: nil))
             }
         
@@ -41,7 +46,7 @@ class FeedDataManager: NSObject {
     {
         if(RestAPIManager.isConnectedToNetwork())
         {
-            //Generate URL to get photo
+            //Generate URL to get image
             let url:NSURL = NSURL(string: kBaseURL+kGetPhotosEndPoint+String(imageID))!
             
             RestAPIManager.requestDataWithURL(url,completionHandler: { (data, error) -> Void in
@@ -65,12 +70,14 @@ class FeedDataManager: NSObject {
     
     func parseJSONData(data:NSData)
     {
+        //Delete existing data from Entity
         let coreDataManagerClear = CoreDataManager()
         coreDataManagerClear.clearFeedData()
         var feedsArray: NSArray!
         do {
             feedsArray = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as! NSArray
             
+            //Save all feeds in Feed entity
             for feed in feedsArray {
                 let coreDataManager = CoreDataManager()
                 let feed: Feed = coreDataManager.saveFeed(feed as! NSDictionary)

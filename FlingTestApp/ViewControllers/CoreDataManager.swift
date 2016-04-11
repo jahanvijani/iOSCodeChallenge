@@ -38,11 +38,13 @@ class CoreDataManager: NSObject {
         feed.userName = feedData["UserName"] as? String
         feed.photoID = feedData["ImageID"] as? NSNumber
         
-        let bgManagedContext = NSManagedObjectContext(concurrencyType: .PrivateQueueConcurrencyType)
-        bgManagedContext.parentContext = managedContext
+        //Create different ManagedObject for Background save
+        let childManagedContext = NSManagedObjectContext(concurrencyType: .PrivateQueueConcurrencyType)
+        childManagedContext.parentContext = managedContext
         
+        //Save data
         do {
-            try bgManagedContext.save()
+            try childManagedContext.save()
         } catch let error as NSError  {
             print("Could not save \(error), \(error.userInfo)")
         }
@@ -67,14 +69,36 @@ class CoreDataManager: NSObject {
             // Do something in response to error condition
         }
         
-        let bgManagedContext = NSManagedObjectContext(concurrencyType: .PrivateQueueConcurrencyType)
-        bgManagedContext.parentContext = managedContext
+        //Create different ManagedObject for Background save
+        let childManagedContext = NSManagedObjectContext(concurrencyType: .PrivateQueueConcurrencyType)
+        childManagedContext.parentContext = managedContext
         
+        //Update data
         do {
-            try bgManagedContext.save()
+            try childManagedContext.save()
         } catch {
             // Do something in response to error condition
         }
+    }
+    
+    func getFeed() -> NSArray?{
+        
+        let appDelegate =
+            UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        let fetchRequest = NSFetchRequest(entityName: "Feed")
+        
+        do {
+            let fetchedFeeds = try managedContext.executeFetchRequest(fetchRequest) as! [Feed]
+            return fetchedFeeds
+            
+        } catch {
+            // Do something in response to error condition
+        }
+        
+        return nil
     }
     
     func clearFeedData() {
